@@ -1,0 +1,22 @@
+- name: list of hash example
+  hosts: dev
+  user: ec2-user
+  become: true
+  tasks:
+  - name: create file if condition match
+    file:
+     path: /tmp/sunil
+     state: directory
+    when: ansible_distribution == "Fedora"
+ 
+  - name: create file if condition match
+    file:
+     path: /tmp/sunil
+     state: directory
+    when: ansible_distribution == "Fedora" or ansible_distribution == "RedHat"
+
+  - name: create file if condition match
+    file:
+     path: /tmp/sunil-7
+     state: directory
+    when: ansible_distribution == "RedHat" and ansible_distribution_major_version == "7"

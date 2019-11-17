@@ -1,0 +1,19 @@
+- name: print playbook output example
+  hosts: dev
+  user: ec2-user
+  become: true
+  tasks:
+  - name: check file status 
+    stat:
+       path: /tmp/sunil-file
+    register: abc
+
+ # - debug: var=abc
+ 
+  - name: create file if does not exists
+    copy:
+      content: "Hello Ansible"
+      dest: /tmp/sunil-file
+    when: abc.stat.exists == false
+
+ 

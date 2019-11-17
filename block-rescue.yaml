@@ -1,0 +1,13 @@
+- name: example of block and rescue
+  hosts: dev
+  user: ec2-user
+  become: true
+  tasks:
+  - block:
+     - yum: name=nopkg state=present
+     - command: uptime
+
+    rescue:
+     - copy: content="Blocked Failed" dest=/etc/motd
+     - debug:
+        msg: "Blocked Failed"
