@@ -1,6 +1,6 @@
 - name: list of hash example
   hosts: dev
-  user: ec2-user
+  user: ansible
   become: true
   tasks:
   - name: create application path 

@@ -1,6 +1,6 @@
 - name: nested loop example
   hosts: dev
-  user: ec2-user
+  user: ansible
   become: true
   vars:
     mygroups:

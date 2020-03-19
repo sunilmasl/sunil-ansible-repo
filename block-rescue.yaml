@@ -1,6 +1,6 @@
 - name: example of block and rescue
   hosts: dev
-  user: ec2-user
+  user: ansible
   become: true
   tasks:
   - block:

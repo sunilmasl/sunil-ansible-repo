@@ -1,5 +1,6 @@
 - name: example of facts
   hosts: dev
+  user: ansible
   vars:
     file_path: /etc/motd
   user: ec2-user
